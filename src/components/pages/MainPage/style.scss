@@ -1,0 +1,100 @@
+@import "../../../variables.scss";
+$pointer: url("../../../assets/Pointer.svg"), default;
+
+.main-page {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  padding-left: 64px;
+  &__content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__info-block {
+      padding-left: 10%;
+      padding-bottom: 12%;
+      &__heading {
+        font-weight: bold;
+        font-size: 70px;
+        color: $mainBlack;
+        &__eng {
+          color: $mainAccent;
+        }
+      }
+      &__text {
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 30px;
+        color: $grayDark;
+      }
+    }
+  }
+}
+
+  @media (max-width: $tablet) {
+    .main-page__content {
+      width: 100%;
+    }
+  }
+@media (max-width: $smart) {
+  .main-page {
+    font-size: 2.5rem;
+    padding-left: 0px;
+    &__content {
+      font-size: 2.5rem;
+      height: 100vh;
+      &__info-block {
+        padding: 0px;
+        padding-bottom: 30%;
+        &__heading {
+          font-size: 2.5rem;
+          padding-left: 16px;
+        }
+        &__text {
+          font-size: 1rem;
+          padding: 0px 16px 10px 16px;
+          }
+      }
+    }
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 10%;
+  &__copyright {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    color: $grayDark;
+  }
+  &__phone-number {
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 15px;
+    color: $mainBlack;
+    &:hover {
+      color: $mainAccent;
+    }
+  }
+}
+@media (max-width: $smart) {
+  .footer {
+    background-color: $mainBlack;
+    color: $grayLight;
+    padding-right: 5%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    &__phone-number {
+      color: $mainAccent;
+      &:hover {
+        color: $grayLight;
+      }
+    }
+  }
+  .footer__copyright{
+    margin-top: 8px;
+  }
+}

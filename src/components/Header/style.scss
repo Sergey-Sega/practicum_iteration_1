@@ -1,0 +1,40 @@
+@import "../../variables.scss";
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 10%;
+  &__site-name {
+    color: $mainAccent;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-decoration: none;
+    &:hover {
+      color: darken($mainAccent, 10);
+    }
+  }
+  &__geolocation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   &__icon{
+     margin-right: 8px;
+   }
+    p {
+      color: $grayDark;
+      margin: 0;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: $grayDark;
+    }
+  }
+}
+@media (max-width: $smart) {
+  .header {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+}

@@ -1,0 +1,49 @@
+@import "../../variables.scss";
+
+.button {
+  min-height: 32px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: linear-gradient(90deg, $mainAccent 2.61%, #039F67 112.6%);
+  background-blend-mode: darken;
+  &:hover {
+    background: linear-gradient(
+      to right,
+      darken($mainAccent, 20),
+      darken($mainAccent, 30)
+    );
+  }
+  &:active {
+    background: linear-gradient(
+      to right,
+      darken($mainAccent, 30),
+      darken($mainAccent, 40)
+    );
+  }
+}
+
+.fake-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.fake-btn.red-btn {
+  margin: 0px auto;
+}
+.big-btn {
+  width: 250px;
+  height: 48px;
+}
+
+@media (max-width: $smart) {
+  .button {
+    width: 100%;
+    border-radius: 0%;
+  }
+}
