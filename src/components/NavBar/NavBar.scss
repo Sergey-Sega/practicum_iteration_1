@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+$pointer: url('../../UI/Pointer.svg'), default;
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  width: 64px;
+  height: 100%;
+  position: fixed;
+  background-color: $mainBlack;
+  z-index: 3;
+}
+@media (max-width: $smart) {
+    .nav-bar {
+      background: transparent;
+    }
+    & .nav-btn__lang{
+        display: none;
+    }
+  }
+ 

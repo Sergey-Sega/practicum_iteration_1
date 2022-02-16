@@ -1,0 +1,95 @@
+@import "../../variables.scss";
+
+.nav-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  margin-top: 16px;
+  position: relative;
+  padding: 1rem;
+  &__lang {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: $mainAccent;
+    margin-bottom: 16px;
+    &:hover {
+      border: $grayLight 2px solid;
+      border-radius: 50%;
+      color: $grayLight;
+    }
+    &:active {
+      color: $mainAccent;
+    }
+  }
+  &__toggle {
+    &.active {
+      .nav-btn__bar {
+        background-color: transparent;
+
+        &::after {
+          top: 10px;
+          transform: translateY(-10px) rotate(-45deg);
+        }
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+    .nav-btn__bar {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 25px;
+      height: 3px;
+      border-radius: 2px;
+      background: #eeeeee;
+      transition: all 300ms ease-in-out;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+        background: #eeeeee;
+        bottom: -7px;
+        transition: all 300ms ease-in-out;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+        background: #eeeeee;
+        top: -7px;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+  .nav-btn__bar__wrapper {
+    position: absolute;
+    left: 3px;
+  }
+}
+@media (max-width: $smart) {
+    .nav-btn{
+        padding-left: 0%;
+    }
+  .nav-btn__toggle {
+    filter: invert(1);
+  }
+  &.active {
+    .nav-btn__bar {
+      right: -13px;
+      filter: invert(1);
+    }
+  }
+}

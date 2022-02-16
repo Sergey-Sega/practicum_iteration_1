@@ -1,0 +1,28 @@
+@import "variables";
+$pointer: url("./UI/Pointer.svg"), default;
+@font-face {
+  font-family: "Roboto";
+  src: url("./UI/fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./UI/fonts/Roboto-Medium.ttf");
+
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./UI/fonts/Roboto-Light.ttf");
+  font-weight: 300;
+}
+* {
+  cursor: url("./UI/Cursor.svg"), default;
+  font-family: "Roboto";
+  color: $grayLight;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  height: 100vh;
+}

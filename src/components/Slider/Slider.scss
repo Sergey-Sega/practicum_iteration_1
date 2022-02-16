@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+$pointer: url("../../UI/Pointer.svg"), default;
+
+.swiper-slide {
+  width: 100% !important;
+}
+.swiper-button-prev {
+  height: 100% !important;
+  top: 20px !important;
+  color: #fff !important;
+  left: 0 !important;
+  padding: 5px;
+}
+.swiper-button-next {
+  padding: 5px;
+  height: 100% !important;
+  top: 20px !important;
+  right: 0 !important;
+  color: #fff !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  &:hover,
+  :active {
+    background-color: transparentize($mainAccent, 0.8);
+    cursor: $pointer;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: $grayLight;
+  cursor: $pointer !important;
+  opacity: 1;
+  &-active{
+    background-color: $mainAccent!important;
+  }
+}
+.slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__content {
+    background: linear-gradient(45deg, black, transparent);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+    padding-bottom: 30%;
+    &__heading {
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 47px;
+    }
+    &__text {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 90%;
+    }
+    &__btn {
+      width: 164px;
+      height: 48px;
+    }
+  }
+}
+
+.swiper-slide {
+  .slide {
+    &__content {
+      &__btn.red {
+        min-height: 48px;
+        background-image: linear-gradient(
+          to right,
+          adjust-hue($mainAccent, 200deg),
+          darken(adjust-hue($mainAccent, 200deg), 20)
+        );
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 200deg), 20),
+            darken(adjust-hue($mainAccent, 200deg), 30)
+          );
+        }
+        &:active,
+        &:focus {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 200deg), 30),
+            darken(adjust-hue($mainAccent, 200deg), 40)
+          );
+        }
+      }
+      &__btn.violet {
+        background-image: linear-gradient(
+          to right,
+          adjust-hue($mainAccent, 160deg),
+          darken(adjust-hue($mainAccent, 160deg), 20)
+        );
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 160deg), 20),
+            darken(adjust-hue($mainAccent, 160deg), 30)
+          );
+        }
+        &:active,
+        &:focus {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 160deg), 30),
+            darken(adjust-hue($mainAccent, 160deg), 40)
+          );
+        }
+      }
+      &__btn.aqua {
+        background-image: linear-gradient(
+          to right,
+          adjust-hue($mainAccent, 20deg),
+          darken(adjust-hue($mainAccent, 20deg), 20)
+        );
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 20deg), 20),
+            darken(adjust-hue($mainAccent, 20deg), 30)
+          );
+        }
+        &:active,
+        &:focus {
+          background-image: linear-gradient(
+            to right,
+            darken(adjust-hue($mainAccent, 20deg), 30),
+            darken(adjust-hue($mainAccent, 20deg), 40)
+          );
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .swiper-slide {
+    display: none;
+  }
+}
