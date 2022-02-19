@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/practicum_iteration_1/static/css/main.33355c8f.css",
-    "main.js": "/practicum_iteration_1/static/js/main.0b4bd0b4.js",
+    "main.css": "/practicum_iteration_1/static/css/main.c8a8b160.css",
+    "main.js": "/practicum_iteration_1/static/js/main.e8c251cb.js",
     "static/media/slide_4.jpg": "/practicum_iteration_1/static/media/slide_4.82fdbed03a732683747a.jpg",
     "static/media/slide_1.jpg": "/practicum_iteration_1/static/media/slide_1.024ae8f23c16f0e9f0fb.jpg",
     "static/media/slide_3.jpg": "/practicum_iteration_1/static/media/slide_3.d16c5160289ec3819226.jpg",
@@ -16,11 +16,11 @@
     "static/media/Cursor.svg": "/practicum_iteration_1/static/media/Cursor.321a6f4e77080a31f965.svg",
     "static/media/Facebook.svg": "/practicum_iteration_1/static/media/Facebook.c1876cc3ac4c922d5a12.svg",
     "index.html": "/practicum_iteration_1/index.html",
-    "main.33355c8f.css.map": "/practicum_iteration_1/static/css/main.33355c8f.css.map",
-    "main.0b4bd0b4.js.map": "/practicum_iteration_1/static/js/main.0b4bd0b4.js.map"
+    "main.c8a8b160.css.map": "/practicum_iteration_1/static/css/main.c8a8b160.css.map",
+    "main.e8c251cb.js.map": "/practicum_iteration_1/static/js/main.e8c251cb.js.map"
   },
   "entrypoints": [
-    "static/css/main.33355c8f.css",
-    "static/js/main.0b4bd0b4.js"
+    "static/css/main.c8a8b160.css",
+    "static/js/main.e8c251cb.js"
   ]
 }
