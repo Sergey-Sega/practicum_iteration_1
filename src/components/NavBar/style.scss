@@ -1,0 +1,217 @@
+@import "../../variables.scss";
+$pointer: url("../../assets/Pointer.svg"), default;
+$telegram: url("../../assets/Telegram.svg");
+$facebook: url("../../assets/Facebook.svg");
+$instagram: url("../../assets/Instagram.svg");
+
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  width: 64px;
+  height: 100%;
+  position: fixed;
+  background-color: $mainBlack;
+  z-index: 3;
+}
+
+.nav-menu {
+  z-index: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparentize($mainBlack, 0.3);
+  z-index: 2;
+  transform: translateX(-100vw);
+  transition: all 300ms ease-in-out;
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__link-list {
+    position: absolute;
+    left: 32px;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    background-color: $mainBlack;
+    display: flex;
+    flex-direction: column;
+    &__link {
+      padding-left: 32px;
+      text-decoration: none;
+      font-weight: 500;
+      width: 10%;
+      font-size: 32px;
+      line-height: 37px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      cursor: $pointer;
+    }
+    &__link:hover {
+      color: $mainAccent;
+    }
+    &__social-block {
+      margin: 32px;
+      display: flex;
+      .icon {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin-right: 24px;
+        mask-size: cover;
+        background: $grayLight;
+        &.icon-telegram {
+          mask: $telegram;
+        }
+        &.icon-facebook {
+          mask: $facebook;
+        }
+        &.icon-instagram {
+          mask: $instagram;
+        }
+        &:hover {
+          background: $mainAccent;
+          cursor: $pointer;
+        }
+      }
+    }
+  }
+}
+
+.nav-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  margin-top: 16px;
+  position: relative;
+  padding: 1rem;
+  &__lang {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: $mainAccent;
+    margin-bottom: 16px;
+    &:hover {
+      border: $grayLight 2px solid;
+      border-radius: 50%;
+      color: $grayLight;
+    }
+    &:active {
+      color: $mainAccent;
+    }
+  }
+  &__toggle {
+    &.active {
+      .nav-btn__bar {
+        background-color: transparent;
+
+        &::after {
+          top: 10px;
+          transform: translateY(-10px) rotate(-45deg);
+        }
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+    .nav-btn__bar {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 25px;
+      height: 3px;
+      border-radius: 2px;
+      background: #eeeeee;
+      transition: all 300ms ease-in-out;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+        background: #eeeeee;
+        bottom: -7px;
+        transition: all 300ms ease-in-out;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+        background: #eeeeee;
+        top: -7px;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+  .nav-btn__bar__wrapper {
+    position: absolute;
+    left: 3px;
+  }
+}
+@media (max-width: $smart) {
+  .nav-btn {
+    padding-left: 0%;
+  }
+  .nav-btn__toggle {
+    filter: invert(1);
+  }
+  &.active {
+    .nav-btn__bar {
+      right: -13px;
+      filter: invert(1);
+    }
+  }
+}
+@media (max-width: $smart) {
+  .nav-bar {
+    background: transparent;
+  }
+  .nav-btn__lang {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .nav-menu {
+    position: fixed;
+    background-color: $mainBlack;
+    &__link-list {
+      left: 0px;
+      &__link {
+        font-size: 26px;
+      }
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .nav-menu__link-list {
+    width: 100%;
+  }
+  .nav-menu {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+@media (min-width: 768px){
+  .nav-btn__lang {
+    display: block;
+    &.active {
+      display: none;
+    }
+  }
+}
