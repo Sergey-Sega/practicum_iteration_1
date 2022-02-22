@@ -4,8 +4,9 @@ import Slider from "../../Slider/Slider";
 import Header from "../../Header/Header";
 import "./style.scss";
 import Button from "../../Button/Button";
+import { Link } from "react-router-dom";
 
-export default function MainPageContainer() {
+export const MainPageContainer = () => {
   return (
     <div className="main-page">
       <div className="main-page__content">
@@ -21,7 +22,9 @@ export default function MainPageContainer() {
           <p className="main-page__content__info-block__text">
             Поминутная аренда авто твоего города
           </p>
+          <Link to="/need-for-drive/order-page/">
           <Button type={"button fake-btn big-btn"} title="Забронировать" />
+          </Link>
         </div>
         <footer className="footer">
           <span className="footer__copyright">

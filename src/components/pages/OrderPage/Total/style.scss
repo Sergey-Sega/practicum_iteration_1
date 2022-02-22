@@ -1,0 +1,54 @@
+@import "../../../../variables.scss";
+
+.total {
+  padding: 16px;
+  text-align: center;
+  border-left: 1px solid $grayLight;
+  &__head {
+    color: $mainBlack;
+    font-weight: bold;
+    text-align: right;
+  }
+  &__list {
+    display: block;
+    &__item {
+      padding-bottom: 16px;
+      font-weight: 300;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-end;
+      .text {
+        color: $mainBlack;
+        white-space: nowrap;
+      }
+      .text__dinamic {
+        text-align: end;
+        color: $grayDark;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+.dots {
+  flex: 2;
+  border-bottom: dotted 1px;
+}
+.total__sum {
+  font-weight: 300;
+  font-size: 16px;
+  color: $mainBlack;
+  text-align: left;
+  span {
+    font-size: 16px;
+    color: $mainBlack;
+    font-weight: normal;
+  }
+}
+@media(min-width:$tablet){
+    .total{
+        padding-right: 115px;
+        height: 100vh;
+        flex: 1;
+    }
+}

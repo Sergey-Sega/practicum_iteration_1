@@ -28,9 +28,9 @@
 }
 
 .fake-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   text-decoration: none;
 }
 .fake-btn.red-btn {
@@ -40,7 +40,11 @@
   width: 250px;
   height: 48px;
 }
-
+.total-btn{
+  width: 287px;
+  height: 48px;
+  margin-top: 32px;
+}
 @media (max-width: $smart) {
   .button {
     width: 100%;

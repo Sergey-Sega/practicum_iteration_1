@@ -1,0 +1,83 @@
+@import "../../../variables.scss";
+
+.order-page {
+  overflow: hidden;
+  display: flex;
+  margin-left: 64px;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  &__nav {
+    color: $grayDark;
+    border-top: 1px solid $grayLight;
+    border-bottom: 1px solid $grayLight;
+    padding: 2px 58px;
+    &__btn {
+      color: $mainAccent;
+      background: transparent;
+      border: none;
+      outline: none;
+      &:active,
+      &:hover {
+        color: darken($mainAccent, 10);
+        border: none;
+        outline: none;
+      }
+      &.completed {
+        color: $mainBlack;
+      }
+      &:disabled {
+        color: $grayDark;
+      }
+    }
+  }
+  &__container {
+    box-sizing: border-box;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    &__form {
+      height: 90%;
+      padding: 32px 0px 0px 64px;
+    }
+    &total {
+        flex: 2;
+    }
+  }
+}
+@media (max-width: $desktopMini) {
+  .order-page {
+    &__container {
+      &__form {
+        padding: 16px 0px 0px 32px;
+      }
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .order-page {
+    &__container {
+      &__form {
+        padding: 16px;
+        
+      }
+      &__total {
+        flex: 2;
+      }
+    }
+  }
+}
+@media (max-width: $smart) {
+  .order-page {
+    margin: 0px;
+    overflow-y: auto;
+    &__container {
+      flex-direction: column;
+      
+      &__form {
+        padding: 8px;
+        height: auto;
+      }
+    }
+  }
+}
