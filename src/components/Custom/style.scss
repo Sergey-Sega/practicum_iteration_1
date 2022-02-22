@@ -1,0 +1,188 @@
+@import '../../variables.scss';
+$pointer: url('../../assets/Pointer.svg'), default;
+.label-for-text-input {
+  color: $mainBlack;
+  font-weight: 300;
+  font-size: 14px;
+  position: relative;
+  white-space: pre;
+}
+.textInput {
+  // box-sizing: border-box;
+  min-width: 230px;
+  color: $mainBlack;
+  font-weight: 300;
+  border: none;
+  border-bottom: $grayLight solid 2px;
+  outline: none;
+  padding: 0px 4px;
+  // margin: 0px 16px;
+}
+.reset-btn {
+  position: absolute;
+  right: 20px;
+  top: -1px;
+  color: $mainBlack;
+  border: 0;
+  display: none;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background 200ms;
+  outline: none;
+}
+.textInput:valid ~ .reset-btn {
+  display: block;
+}
+.radio-btn__description {
+  font-weight: 300;
+  font-size: 14px;
+  .radio-btn {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:not(:disabled):active + span::before {
+      box-shadow: inset 0 0 4px 0.2rem $mainAccent;
+    }
+    &:focus + span::before {
+      box-shadow: inset 0 0 3px 0.2rem $mainAccent;
+    }
+    &:checked + span::before {
+      box-shadow: inset 0 0 0 0.2rem #0ec261;
+    }
+    &:checked + span {
+      color: $mainBlack;
+    }
+  }
+  span {
+    color: $grayDark;
+    margin: 0px 16px 12px 0px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $grayLight;
+      border-radius: 50%;
+      margin-right: 0.5em;
+      margin-bottom: 1px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+  }
+}
+
+.checkbox__description {
+  .checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:not(:disabled):not(:checked) + span:hover::before {
+      border-color: lighten($mainAccent, 10);
+    }
+    &:not(:disabled):active + span::before {
+      background-color: lighten($mainAccent, 10);
+      border-color: lighten($mainAccent, 10);
+    }
+    &:focus:not(:checked) + span::before {
+      border-color: $mainAccent;
+    }
+    &:checked + span::before {
+      border-color: $mainAccent;
+      background-color: #fff;
+      background-image: url('../../assets/Okay.png');
+    }
+    &:checked + span {
+      color: $mainBlack;
+    }
+  }
+  span {
+    color: $grayDark;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0px 16px 12px 0px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $grayDark;
+      margin-right: 8px;
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 100%;
+    }
+  }
+}
+
+
+.dropdown-wrap 
+{
+  width: 230px;
+  position: relative;
+  padding-left: 140px;
+}
+
+// .dropdown-wrap .textInput
+// {
+// }
+
+.dropdown{
+  width: 100%;
+  max-height: 145px;
+  overflow-y: auto;
+  width: 240px;
+  position: absolute;
+  top: 22px;
+  z-index: 1;
+  border-bottom: $grayLight solid 2px;
+  background-color: white;
+  
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+}
+.textInput__dropdown{ 
+  min-width: 230px;
+  color: $mainBlack;
+  font-weight: 300;
+  border: none;
+  border-bottom: $grayLight solid 2px;
+  outline: none;
+  padding: 0px 4px;}
+.dropdown-item
+{
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #000;
+  cursor: $pointer;
+  display: flex;
+}
+
+.dropdown-item:hover 
+{
+  color: $mainAccent;
+}
+::-webkit-scrollbar {
+  width: 2px; /* ширина для вертикального скролла */
+  background-color: white;
+  border:1px solid #EEEEEE;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: $grayDark;
+  border-radius: 9em;
+}

@@ -1,9 +1,9 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 .header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 16px 10%;
+  height: 35px;
   &__site-name {
     color: $mainAccent;
     font-weight: bold;
@@ -31,10 +31,21 @@
     }
   }
 }
+.order-page_header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  
+}
 @media (max-width: $smart) {
   .header {
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
   }
+}
+@media (max-width: $desktopMini){}
+.header {
+    padding: 16px 10%;
 }

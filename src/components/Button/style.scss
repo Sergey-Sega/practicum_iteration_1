@@ -1,4 +1,5 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
+$pointer: url('../../assets/Pointer.svg'), default;
 
 .button {
   min-height: 32px;
@@ -11,6 +12,7 @@
   border: none;
   background: linear-gradient(90deg, $mainAccent 2.61%, #039F67 112.6%);
   background-blend-mode: darken;
+  cursor: $pointer;
   &:hover {
     background: linear-gradient(
       to right,
@@ -25,22 +27,54 @@
       darken($mainAccent, 40)
     );
   }
+  &:disabled {
+    background: $grayLight;
+    color: #fff;
+  }
 }
 
 .fake-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
 }
 .fake-btn.red-btn {
   margin: 0px auto;
 }
+.warn-btn {
+  height: 48px;
+  width: 177px;
+  margin: 8px;
+}
+.red-btn {
+  background: linear-gradient(to left, darken(#7b0c3b, 20), #7b0c3b 100%);
+  width: 164px;
+  &:hover {
+    background: linear-gradient(
+      to left,
+      darken(#7b0c3b, 20),
+      darken(#7b0c3b, 30)
+    );
+  }
+  &:active {
+    background: linear-gradient(
+      to right,
+      darken(#7b0c3b, 30),
+      darken(#7b0c3b, 40)
+    );
+  }
+  &:disabled {
+    background: $grayLight;
+    color: #fff;
+  }
+}
 .big-btn {
   width: 250px;
   height: 48px;
 }
-
+.total-btn{
+  width: 287px;
+  height: 48px;
+  margin-top: 32px;
+}
 @media (max-width: $smart) {
   .button {
     width: 100%;

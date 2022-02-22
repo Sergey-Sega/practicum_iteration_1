@@ -1,28 +1,55 @@
-@import "variables";
-$pointer: url("./assets/Pointer.svg"), default;
+@import 'variables';
+$pointer: url('./assets/Pointer.svg'), default;
 @font-face {
-  font-family: "Roboto";
-  src: url("./assets/fonts/Roboto-Bold.ttf");
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
   font-weight: bold;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("./assets/fonts/Roboto-Medium.ttf");
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Medium.ttf');
 
   font-weight: normal;
 }
 @font-face {
-  font-family: "Roboto";
-  src: url("./assets/fonts/Roboto-Light.ttf");
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Light.ttf');
   font-weight: 300;
 }
 * {
-  cursor: url("./assets/Cursor.svg"), default;
-  font-family: "Roboto";
+  cursor: url('./assets/Cursor.svg'), default;
+  font-family: 'Roboto';
   color: $grayLight;
   font-style: normal;
 }
 body {
   margin: 0;
   height: 100vh;
+}
+legend {
+  font-weight: 300;
+  font-size: 14px;
+  color: $mainBlack;
+  padding: 16px 0px 0px 0px;
+}
+.App{
+  height: 100vh;
+}
+fieldset {
+  border: none;
+  width: fit-content;
+}
+::-webkit-scrollbar {
+  width: 24px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
+  background-color: white;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: $grayDark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #253861;
 }

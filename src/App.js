@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import NavBar from "./components/NavBar/Navbar";
-import MainPage from "./components/pages/MainPage/MainPage";
+import NavBar from './components/NavBar/Navbar';
+import { Routes } from './routes/mainroutes';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar />
-      <MainPage />
+      <Routes/>
     </div>
   );
 }

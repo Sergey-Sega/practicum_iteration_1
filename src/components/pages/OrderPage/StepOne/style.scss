@@ -1,0 +1,44 @@
+@import '../../../../variables.scss';
+$pointer: url('../../../assets/Pointer.svg'), default;
+
+.step-one {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  &__form {
+    margin-bottom: 16px;
+    &__location{
+      z-index: 100;
+      margin-top: 3px;
+      margin-left: 45px;
+    position: absolute;
+      font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+    }
+  }
+}
+.map-block {
+  padding-top: 32px;
+  position: relative;
+  width: 736px;
+  height: 352px;
+  &__description {
+    color: $mainBlack;
+    font-weight: 300;
+  }
+}
+.map {
+  width: 100%;
+}
+.step-one__form__location:last-of-type{
+  padding-top: 10px;
+  
+}
+.step-one__form__location:first-of-type{
+  padding-left: 50px;
+}
+.dropdown-wrap:last-of-type{
+  padding-top: 10px;
+}
