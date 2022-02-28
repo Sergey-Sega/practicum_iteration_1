@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/practicum_iteration_1/static/css/main.4acdf5b8.css",
-    "main.js": "/practicum_iteration_1/static/js/main.e234e926.js",
+    "main.css": "/practicum_iteration_1/static/css/main.4796d7ec.css",
+    "main.js": "/practicum_iteration_1/static/js/main.676412f6.js",
     "static/media/slide_4.jpg": "/practicum_iteration_1/static/media/slide_4.82fdbed03a732683747a.jpg",
     "static/media/slide_1.jpg": "/practicum_iteration_1/static/media/slide_1.024ae8f23c16f0e9f0fb.jpg",
     "static/media/slide_3.jpg": "/practicum_iteration_1/static/media/slide_3.d16c5160289ec3819226.jpg",
@@ -9,6 +9,8 @@
     "static/media/Roboto-Medium.ttf": "/practicum_iteration_1/static/media/Roboto-Medium.13a29228654d5c5ec9c4.ttf",
     "static/media/Roboto-Bold.ttf": "/practicum_iteration_1/static/media/Roboto-Bold.4f39c5796e60c9d8e732.ttf",
     "static/media/Roboto-Light.ttf": "/practicum_iteration_1/static/media/Roboto-Light.0cea39826bd36bbfe330.ttf",
+    "static/media/FakeMap.jpg": "/practicum_iteration_1/static/media/FakeMap.6b0f8981da6b25226828.jpg",
+    "static/media/car.png": "/practicum_iteration_1/static/media/car.436bdf3ec93413726b38.png",
     "static/media/Instagram.svg": "/practicum_iteration_1/static/media/Instagram.98094ec43567d0a8402f.svg",
     "static/media/Pointer.svg": "/practicum_iteration_1/static/media/Pointer.29cb094948c13d00b304.svg",
     "static/media/Telegram.svg": "/practicum_iteration_1/static/media/Telegram.a6bf82e27205f8e2dceb.svg",
@@ -16,11 +18,11 @@
     "static/media/Cursor.svg": "/practicum_iteration_1/static/media/Cursor.321a6f4e77080a31f965.svg",
     "static/media/Facebook.svg": "/practicum_iteration_1/static/media/Facebook.c1876cc3ac4c922d5a12.svg",
     "index.html": "/practicum_iteration_1/index.html",
-    "main.4acdf5b8.css.map": "/practicum_iteration_1/static/css/main.4acdf5b8.css.map",
-    "main.e234e926.js.map": "/practicum_iteration_1/static/js/main.e234e926.js.map"
+    "main.4796d7ec.css.map": "/practicum_iteration_1/static/css/main.4796d7ec.css.map",
+    "main.676412f6.js.map": "/practicum_iteration_1/static/js/main.676412f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.4acdf5b8.css",
-    "static/js/main.e234e926.js"
+    "static/css/main.4796d7ec.css",
+    "static/js/main.676412f6.js"
   ]
 }
