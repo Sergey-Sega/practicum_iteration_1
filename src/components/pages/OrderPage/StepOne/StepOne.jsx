@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable camelcase */
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './style.scss';
 import { observer } from 'mobx-react-lite';
 import store from '../../../../store';
@@ -8,12 +8,14 @@ import { useStore } from '../../../../hooks/useStore';
 import { CustomDropDownPoints } from '../../../Custom/CustomDropDown/CustomDropDownPoints';
 import { CustomDropDownCities } from '../../../Custom/CustomDropDown/CustomDropDown';
 import {CarMap} from '../Map/Map';
+
 export const StepOne = observer(() => {
   const { orderStatus } = useStore();
 
   useEffect(() => {
     store.getData();
   }, []);
+
 
   useEffect(() => {
     (async () => {
@@ -22,6 +24,12 @@ export const StepOne = observer(() => {
     })();
   }, [orderStatus]);
 
+  const map = useRef();
+
+  const myPanTo = (coordinates) => {
+    map.current.panTo(coordinates);
+  };
+
   return (
       <div className='step-one'>
 
@@ -29,16 +37,16 @@ export const StepOne = observer(() => {
           <span className='step-one__form__location'>
             Город
             </span>
-        <CustomDropDownCities placeholder='Введите название города' options={ store.data.Cities } k="name"/>
+        <CustomDropDownCities placeholder='Введите название города' options={ store.data.Cities } k="name" onClickCity={myPanTo}/>
         <span
         className='step-one__form__location'>
           Пункт выдачи
           </span>
-      <CustomDropDownPoints placeholder='Начните вводить пункт...' options={ store.data.points } k="address"/>
+      <CustomDropDownPoints placeholder='Начните вводить пункт...' options={ store.data.points } k="address" onClickPoint={myPanTo}/>
         </form>
         <div className='map-block'>
           <p className='map-block__description'>Выбрать на карте:</p>
-           <CarMap/>
+           <CarMap cityRef={map}/>
         </div>
       </div>
     );

@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import store from '../../../store';
 import '../style.scss';
+import { observer } from 'mobx-react-lite';
 
-export const CustomDropDownCities = (props) => {
+export const CustomDropDownCities = observer((props) => {
     const { k, options, placeholder } = props;
 
     const [Data, setData] = useState(null);
@@ -14,7 +15,6 @@ export const CustomDropDownCities = (props) => {
 setData(options);
 }
     });
-
 
     const inputRef = useRef();
     const dropRef = useRef();
@@ -34,6 +34,8 @@ const setValue = (value) => {
         inputRef.current.value = value;
         store.filterPoints(value);
         dropRef.current.style.display = 'none';
+        store.showCity();
+        store.action('destination', '');
     };
 
     const filterData = () => {
@@ -42,18 +44,21 @@ const setValue = (value) => {
         setData(result);
     };
 
-
     return (
     <div className="dropdown-wrap">
                 <input id='asd' type="text" className='textInput__dropdown' ref={ inputRef } onFocus={ openDropDown } onChange={ filterData } placeholder={placeholder} />
                 <ul className="dropdown" ref={ dropRef }>
                     { Data ?
                         Data.map((elem) => (
-                        <li className='dropdown-item' onClick={ (e) => setValue(e.target.textContent) } key={elem.id} >{ elem[k] }</li>
+                        <li className='dropdown-item' onClick={ (e) => {
+                            setValue(e.target.textContent);
+                           setTimeout(() => props.onClickCity(store.data.cityLocation), 400);
+                            ;
+} } key={elem.id} >{ elem[k] }</li>
                     ))
                         : null
                     }
                 </ul>
             </div>
     );
-};
+});

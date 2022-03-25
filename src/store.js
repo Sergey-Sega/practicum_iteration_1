@@ -18,7 +18,6 @@ class Store
         Cars: [],
         Rates: [],
         
-        selected: 'Введите название города',
         isActive:  false,
 
         color:'',
@@ -38,7 +37,8 @@ class Store
         thumbnail: '',
         points: [],
         modal: false,
-        mapsAddress: []
+        cityLocation: [],
+        pointLocation: [],
     }
 
     order = {
@@ -81,9 +81,8 @@ class Store
         let resPoints = await fetchData(POINTS);
         
         this.data.Cities = resCities.data;
-        this.data.Points = resPoints.data;
-
-        this.initMaps();
+        this.data.Points = resPoints.data; 
+        
     }
     async getDataRates()
     {
@@ -91,33 +90,37 @@ class Store
         this.data.Rates = resRates.data;
     }
 
-    async initMaps()
-    {
-
-        const params = this.data.Points
-                            .filter((elem) => elem.cityId?.name)
-                            .map((elem) => { 
-                                return { city: elem.cityId?.name, address: elem.address } 
-                            });
-
-
-        const result = [];
-
-        for(let elem of params)
-        {
-            let res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${elem.city}+${elem.address.split(' ').join('+')}`)
-
-            let data = await res.json();
-           
-            result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse());
-        }
-
-        this.mapsAddress = result;
-
-         console.log(this.mapsAddress)
-        
-    }
+ async showPoint()
+{
+    const value = this.data.destination
+     const result = []
+        const res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${this.data.city}+${value.split(' ').join('+')}`)
     
+        const data = await res.json();
+       
+        result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
+    
+    this.data.pointLocation = [...result]
+
+     
+}
+
+async showCity()
+{
+    const value = this.data.city
+     const result = []
+        const res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${value.split(' ').join('+')}`)
+
+        const data = await res.json();
+       
+        result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
+     
+    this.data.cityLocation = [...result]
+    
+    
+}
+    
+
     navAction(key)
     {
         switch (key) {

@@ -5,9 +5,7 @@
   "homepage": "https://sergey-sega.github.io/practicum_iteration_1",
   "dependencies": {
     "axios": "^0.26.0",
-    "classnames": "^2.3.1",
     "dotenv": "^16.0.0",
-    "leaflet": "^1.7.1",
     "mobx": "^6.3.13",
     "mobx-react-lite": "^3.2.3",
     "mobx-state-tree": "^5.1.3",
