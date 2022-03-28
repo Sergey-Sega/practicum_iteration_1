@@ -5,7 +5,9 @@ import { CITIES, ORDER, POINTS, RATE } from './service/urls';
 import { YMAPS_KEY } from './config';
 class Store
 {    
-     data = {
+    
+
+    _initialData = {
         orderState:false,
 
         c1: false,
@@ -41,7 +43,7 @@ class Store
         pointLocation: [],
     }
 
-    order = {
+    _initialOrder = {
     orderStatusId: {},
     cityId: {},
     pointId: {},
@@ -55,7 +57,8 @@ class Store
     isNeedChildChair: false,
     isRightWheel: false,
     }
-    
+    order = {}
+    data = {}
     steps = {
         s1: true,
         s2: false,
@@ -73,6 +76,12 @@ class Store
     constructor()
     {
         makeAutoObservable(this);
+        this.clearData()
+    }
+
+    clearData(){
+        this.data = this._initialData
+        this.order = this._initialOrder
     }
 
     async getData()
@@ -116,10 +125,18 @@ async showCity()
         result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
      
     this.data.cityLocation = [...result]
-    
-    
 }
+   async writePoint(coordinates){
+       
+       const result = []
+    const res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${coordinates.reverse()}`)
+    const data = await res.json();
+    console.log(data)
+    result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.name)
     
+    console.log(result)
+        this.data.destination = result
+    }
 
     navAction(key)
     {
@@ -247,34 +264,34 @@ async showCity()
     }
 
     setOptions(value){
-          const State = { ...this.data };
+          
       
-       const index = State.options.findIndex((elem) => elem == value);
+       const index = this.data.options.findIndex((elem) => elem == value);
       
     
 
    if (index != -1) {
-            State.options.splice(index, 1);
+    this.data.options.splice(index, 1);
            } else {
-            State.options.push(value);
+            this.data.options.push(value);
           }
 
-          if (State.options.includes('Полный бак')) {
+          if (this.data.options.includes('Полный бак')) {
             this.order.isFullTank = true
           } 
-            if (State.options.includes('Детское кресло')) {
+            if (this.data.options.includes('Детское кресло')) {
             this.order.isNeedChildChair = true
           } 
-           if (State.options.includes('Правый руль')) {
+           if (this.data.options.includes('Правый руль')) {
             this.order.isRightWheel = true
            }
-          if (!State.options.includes('Полный бак')) {
+          if (!this.data.options.includes('Полный бак')) {
             this.order.isFullTank = false
           } 
-            if (!State.options.includes('Детское кресло')) {
+            if (!this.data.options.includes('Детское кресло')) {
             this.order.isNeedChildChair = false
           } 
-           if (!State.options.includes('Правый руль')) {
+           if (!this.data.options.includes('Правый руль')) {
             this.order.isRightWheel = false
            }
          };

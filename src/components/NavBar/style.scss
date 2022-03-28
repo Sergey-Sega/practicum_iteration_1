@@ -69,10 +69,10 @@ $instagram: url('../../assets/Instagram.svg');
           mask: $telegram;
         }
         &.icon-facebook {
-          mask: $facebook;
+          mask: $telegram;
         }
         &.icon-instagram {
-          mask: $instagram;
+          mask:$telegram;
         }
         &:hover {
           background: $mainAccent;

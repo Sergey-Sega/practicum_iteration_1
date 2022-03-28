@@ -8,11 +8,11 @@ $pointer: url('../../../assets/Pointer.svg'), default;
   &__form {
     margin-bottom: 16px;
     &__location{
-      z-index: 100;
+      display: flex;
       margin-top: 3px;
       margin-left: 45px;
-    position: absolute;
       font-weight: 300;
+      display: -webkit-box;
     font-size: 14px;
     line-height: 16px;
     color: black;
@@ -23,14 +23,11 @@ $pointer: url('../../../assets/Pointer.svg'), default;
   padding-top: 32px;
   position: relative;
   width: 736px;
-  height: 352px;
+  height: 350px;
   &__description {
     color: $mainBlack;
     font-weight: 300;
   }
-}
-.map {
-  width: 100%;
 }
 .step-one__form__location:last-of-type{
   padding-top: 10px;
@@ -40,5 +37,19 @@ $pointer: url('../../../assets/Pointer.svg'), default;
   padding-left: 50px;
 }
 .dropdown-wrap:last-of-type{
-  padding-top: 10px;
+  margin-left: 10px;
+}
+
+@media (max-width: 500px) {
+  .map-block{
+    width: 350px;
+     padding-top: 32px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1100px) {
+  .map-block{
+    width: 500px;
+     padding-top: 32px;
+  }
 }

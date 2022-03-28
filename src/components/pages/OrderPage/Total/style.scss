@@ -90,3 +90,8 @@
       flex: 1;
   }
 }
+@media(max-width:$tablet){
+  .total{
+    margin-top: 10px;
+  }
+}

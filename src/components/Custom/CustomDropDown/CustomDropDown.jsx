@@ -6,7 +6,7 @@ import '../style.scss';
 import { observer } from 'mobx-react-lite';
 
 export const CustomDropDownCities = observer((props) => {
-    const { k, options, placeholder } = props;
+    const { k, options, placeholder, defaultValue } = props;
 
     const [Data, setData] = useState(null);
 
@@ -46,7 +46,7 @@ const setValue = (value) => {
 
     return (
     <div className="dropdown-wrap">
-                <input id='asd' type="text" className='textInput__dropdown' ref={ inputRef } onFocus={ openDropDown } onChange={ filterData } placeholder={placeholder} />
+                <input id='asd' type="text" className='textInput__dropdown' ref={ inputRef } onFocus={ openDropDown } onChange={ filterData } placeholder={placeholder} defaultValue={defaultValue} />
                 <ul className="dropdown" ref={ dropRef }>
                     { Data ?
                         Data.map((elem) => (

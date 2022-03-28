@@ -6,6 +6,8 @@ import { YMAPS_KEY } from '../../../../config';
  import fetchData, { initMaps } from '../../../../service/getData';
  import { POINTS } from '../../../../service/urls';
  import { useState } from 'react';
+import pointImg from '../../../../assets/Point.png';
+import store from '../../../../store';
 
 export const CarMap = observer(({cityRef}) => {
   const [state, setState] = useState([]);
@@ -25,12 +27,6 @@ export const CarMap = observer(({cityRef}) => {
     };
   };
 
-  const getPointOptions = () => {
-    return {
-      preset: 'islands#violetIcon',
-    };
-  };
-
 return (
    <YMaps
     query={{
@@ -39,7 +35,7 @@ return (
     >
       <Map
        width = '100%'
-       height= '100%'
+       height= '350px'
        instanceRef={cityRef}
       defaultState={{
           center: ([53.195878, 50.100202]),
@@ -47,10 +43,15 @@ return (
         }} >
               {state.map((coordinates, idx) =>
               <Placemark
+              onClick = {()=> store.writePoint(coordinates)}
                 key={idx}
                 geometry={coordinates}
                 properties={getPointData(idx)}
-                options={getPointOptions()}
+                options={{
+                  iconLayout: 'default#image',
+                  iconImageSize: [18, 18],
+                  iconImageHref: pointImg,
+                }}
               />)
             }
      </Map>

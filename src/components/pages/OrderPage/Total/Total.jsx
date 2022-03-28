@@ -9,6 +9,7 @@ import { getHumanizedValue } from '../../../../utils';
 
 export default observer(function Total() {
   const date = getHumanizedValue(store.data.dateTo-store.data.dateFrom);
+  console.log(store.data);
   return (
     <div className='total'>
       <h1 className='total__head'>Ваш заказ:</h1>
@@ -92,12 +93,6 @@ export default observer(function Total() {
         type='button big-btn total-btn'
         title='Заказать'
         action={() => store.action( 'modal', true)}
-        /> : null }
-        { store.data.orderState ?
-        <Button
-        type='button big-btn total-btn warn-btn red-btn'
-        title='Отменить'
-         action={() => store.action( 'modal', false)}
         /> : null }
       </div>
     </div>

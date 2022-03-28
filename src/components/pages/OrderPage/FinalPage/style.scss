@@ -8,7 +8,7 @@ $pointer: url('../../../../assets/Pointer.svg'), default;
   height: calc(100% - 67px);
   box-sizing: border-box;
   &__nav {
-    color: $grayDark;
+    color: #121212 !important;
     border-top: 1px solid $grayLight;
     border-bottom: 1px solid $grayLight;
     padding: 2px 64px;

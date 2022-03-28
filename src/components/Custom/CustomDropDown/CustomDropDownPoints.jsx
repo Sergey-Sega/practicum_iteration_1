@@ -5,7 +5,7 @@ import store from '../../../store';
 import '../style.scss';
 
 export const CustomDropDownPoints = (props) => {
-    const { k, placeholder } = props;
+    const { k, placeholder, defaultValue } = props;
 
     const inputRef = useRef();
     const dropRef = useRef();
@@ -29,7 +29,7 @@ export const CustomDropDownPoints = (props) => {
 
     return (
             <div className="dropdown-wrap">
-                <input type="text" className='textInput' ref={ inputRef } onFocus={ openDropDown } placeholder={placeholder} />
+                <input type="text" className='textInput' ref={ inputRef } onFocus={ openDropDown } placeholder={placeholder} defaultValue={defaultValue}/>
                 <ul className="dropdown_destination" ref={ dropRef }>
                     { store.data.points.length !==0 ?
                         store.data.points.map((elem) => (

@@ -10,16 +10,20 @@ import Header from '../../../Header/Header';
 import store from '../../../../store';
 import Button from '../../../Button/Button';
 import { getHumanizedValue } from '../../../../utils';
+import { useHistory } from 'react-router-dom';
 export const FinalPage = observer(() => {
   const {orderId} = useParams();
  const {order} = useStore();
 const date = getHumanizedValue(order.order?.dateTo-order.order?.dateFrom);
 
+const history = useHistory();
+
 useEffect(()=>{
   (async () => {
  await order.fetchOrder(orderId);
   })();
-});
+  return store.clearData;
+}, []);
 
 return (
   <>
@@ -85,6 +89,11 @@ return (
         <Button
         type='button big-btn total-btn warn-btn red-btn'
         title='Отменить'
+        action={() => {
+          history.push('/need-for-drive/order-page');
+          store.navAction('s1');
+          store.clearData();
+}}
         />
       </div>
     </div>

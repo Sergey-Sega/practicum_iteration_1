@@ -4,7 +4,7 @@ import { APPLICATION_ID, BASE_URL } from '../config';
 export const LIMIT_KEY = 'limit';
 export const OFFSET_KEY = 'offset';
 export const TOTAL_KEY = 'total';
-export const DEFAULT_LIMIT = 10;
+export const DEFAULT_LIMIT = 100;
 
 axios.interceptors.response.use(
   (response) => response,

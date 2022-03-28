@@ -34,15 +34,17 @@ export const StepOne = observer(() => {
       <div className='step-one'>
 
         <form className='step-one__form' action=''>
-          <span className='step-one__form__location'>
+          <div className='step-one__form__location'>
             Город
-            </span>
-        <CustomDropDownCities placeholder='Введите название города' options={ store.data.Cities } k="name" onClickCity={myPanTo}/>
-        <span
+            <CustomDropDownCities placeholder='Введите название города' options={ store.data.Cities } k="name" onClickCity={myPanTo} defaultValue={store.data.city}/>
+            </div>
+
+        <div
         className='step-one__form__location'>
           Пункт выдачи
-          </span>
-      <CustomDropDownPoints placeholder='Начните вводить пункт...' options={ store.data.points } k="address" onClickPoint={myPanTo}/>
+          <CustomDropDownPoints placeholder='Начните вводить пункт...' options={ store.data.points } k="address" onClickPoint={myPanTo} defaultValue={store.data.destination}/>
+          </div>
+
         </form>
         <div className='map-block'>
           <p className='map-block__description'>Выбрать на карте:</p>

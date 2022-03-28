@@ -11,6 +11,7 @@ export const Routes = () => {
             <Route exact path='/need-for-drive' component={MainPageContainer} />
             <Route exact path="/need-for-drive/order-page" component={OrderPage}/>
            <Route exact path="/need-for-drive/order-page/:orderId" component={FinalPage}/>
+           {/* <Redirect exact from="/need-for-drive/order-page/:orderId" to="/need-for-drive"/> */}
         </Switch>
     );
 };
