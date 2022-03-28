@@ -4,7 +4,12 @@ import fetchData from './service/getData';
 import { CITIES, ORDER, POINTS, RATE } from './service/urls';
 import { YMAPS_KEY } from './config';
 class Store
-{    
+{   
+    
+    data = {}
+
+    order = {}
+
     
 
     _initialData = {
@@ -57,8 +62,7 @@ class Store
     isNeedChildChair: false,
     isRightWheel: false,
     }
-    order = {}
-    data = {}
+    
     steps = {
         s1: true,
         s2: false,
@@ -82,6 +86,16 @@ class Store
     clearData(){
         this.data = this._initialData
         this.order = this._initialOrder
+        this.clearDestination()
+    }
+
+    clearDestination(){
+        this.data.destination = ''
+        this.data.city = ''
+        this.data.options = []
+        this.order.isFullTank = false
+        this.order.isNeedChildChair = false,
+        this.order.isRightWheel = false
     }
 
     async getData()
@@ -107,9 +121,9 @@ class Store
     
         const data = await res.json();
        
-        result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
+        result.push(...data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
     
-    this.data.pointLocation = [...result]
+    this.data.pointLocation = result
 
      
 }
@@ -122,19 +136,18 @@ async showCity()
 
         const data = await res.json();
        
-        result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
+        result.push(...data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
      
-    this.data.cityLocation = [...result]
+    this.data.cityLocation = result
+    console.log(...data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse())
 }
    async writePoint(coordinates){
        
        const result = []
     const res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${coordinates.reverse()}`)
     const data = await res.json();
-    console.log(data)
+
     result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.name)
-    
-    console.log(result)
         this.data.destination = result
     }
 

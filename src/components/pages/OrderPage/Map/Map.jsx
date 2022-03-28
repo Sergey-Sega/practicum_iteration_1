@@ -19,7 +19,6 @@ export const CarMap = observer(({cityRef}) => {
 })();
   }, []);
 
-
   const getPointData = (index) => {
     return {
       balloonContentBody: 'placemark <strong>balloon ' + index + '</strong>',
@@ -38,7 +37,7 @@ return (
        height= '350px'
        instanceRef={cityRef}
       defaultState={{
-          center: ([53.195878, 50.100202]),
+          center: (store.data.cityLocation.length !==0 ? store.data.cityLocation : [53.195878, 50.100202]),
             zoom: 11,
         }} >
               {state.map((coordinates, idx) =>

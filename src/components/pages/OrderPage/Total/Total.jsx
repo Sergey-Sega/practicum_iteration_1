@@ -9,7 +9,6 @@ import { getHumanizedValue } from '../../../../utils';
 
 export default observer(function Total() {
   const date = getHumanizedValue(store.data.dateTo-store.data.dateFrom);
-  console.log(store.data);
   return (
     <div className='total'>
       <h1 className='total__head'>Ваш заказ:</h1>

@@ -27,7 +27,7 @@ export const StepOne = observer(() => {
   const map = useRef();
 
   const myPanTo = (coordinates) => {
-    map.current.panTo(coordinates);
+    map.current.panTo([coordinates]);
   };
 
   return (

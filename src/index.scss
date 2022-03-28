@@ -40,12 +40,11 @@ fieldset {
   width: fit-content;
 }
 ::-webkit-scrollbar {
-  width: 24px; /* ширина для вертикального скролла */
-  height: 8px; /* высота для горизонтального скролла */
+  width: 24px; 
+  height: 8px; 
   background-color: white;
 }
 
-/* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
   background-color: $grayDark;
 }
