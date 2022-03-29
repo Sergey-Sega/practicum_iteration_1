@@ -1,0 +1,97 @@
+@import '../../../../variables.scss';
+
+.total {
+  padding: 16px;
+  text-align: center;
+  border-left: 1px solid $grayLight;
+  
+  &__head {
+    color: $mainBlack;
+    font-weight: bold;
+    text-align: right;
+  }
+  &__list {
+    display: block;
+    &__item {
+      padding-bottom: 16px;
+      font-weight: 300;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-end;
+      color: #999999;
+      .text {
+        color: $mainBlack;
+        white-space: nowrap;
+      }
+      .text__dinamic {
+        text-align: end;
+        color: $grayDark;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+.dots {
+  flex: 2;
+  border-bottom: dotted 1px;
+  color: #999999;
+}
+.total__sum {
+  font-weight: 300;
+  font-size: 16px;
+  color: $mainBlack;
+  text-align: left;
+  span {
+    font-size: 16px;
+    color: $mainBlack;
+    font-weight: normal;
+  }
+}
+.warning {
+  z-index: 100;
+  position: fixed;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffd9;
+  transform: scale(0);
+  &.active{
+    transform: scale(1);
+  }
+  &__btns-block {
+    &__head {
+      font-weight: normal;
+      font-size: 24px;
+      color: $mainBlack;
+      text-align: center;
+    }
+    span {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+@media(min-width:$tablet){
+    .total{
+        padding-right: 115px;
+        height: calc(100%-92px);
+        flex: 1;
+    }
+}
+@media(min-width:1440px){
+  .total{
+      padding-right: 115px;
+      height: calc(100%-92px);
+      flex: 1;
+  }
+}
+@media(max-width:$tablet){
+  .total{
+    margin-top: 10px;
+  }
+}

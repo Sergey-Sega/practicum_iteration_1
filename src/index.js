@@ -1,16 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./index.scss";
-import App from "./App";
+import './index.scss';
+import App from './App';
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, StoreContext } from './store/index';
+
+const store = createStore();
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <StoreContext.Provider value={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </StoreContext.Provider>
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );

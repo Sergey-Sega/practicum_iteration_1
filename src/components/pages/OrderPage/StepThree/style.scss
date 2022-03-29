@@ -1,0 +1,30 @@
+@import "../../../../variables.scss";
+.step-three {
+  &__form {
+    &__date-selector {
+      display: flex;
+    flex-direction: column;
+      text-align: end;
+      padding: 16px 16px 16px 14px;
+    }
+    &__color-selector,
+    &__ratesf {
+      &__description {
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .step-three {
+    &__form {
+      &__color-selector,
+      &__date-selector,
+      &__rates,
+      &__additional {
+      }
+    }
+  }
+}
