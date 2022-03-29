@@ -1,0 +1,64 @@
+@import '../../../../variables.scss';
+
+.car-card {
+  background-color: white;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:hover &__info-card::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px solid $grayDark;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    top: -2px;
+    box-sizing: border-box;
+  }
+  &__radio-btn {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &__radio-btn:checked + &__info-card::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px solid $mainAccent;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    top: -2px;
+    box-sizing: border-box;
+  }
+
+  &__info-card {
+    box-sizing: border-box;
+    min-height: 200px;
+    position: relative;
+    border: 1px solid white;
+    z-index: 1;
+    &__head {
+        padding-left: 8px;
+      color: $mainBlack;
+      font-weight: normal;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    &__cost {
+        padding-left: 8px;
+      font-weight: 300;
+      font-size: 14px;
+      color:$grayDark
+    }
+    &__img {
+      float: right;
+      width: 240px;
+      height: 116px;
+      z-index: 2;
+      object-fit: scale-down;
+    }
+  }
+}

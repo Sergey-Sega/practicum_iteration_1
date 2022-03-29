@@ -1,8 +1,8 @@
-@import "../../variables.scss";
-$pointer: url("../../assets/Pointer.svg"), default;
-$telegram: url("../../assets/Telegram.svg");
-$facebook: url("../../assets/Facebook.svg");
-$instagram: url("../../assets/Instagram.svg");
+@import '../../variables.scss';
+$pointer: url('../../assets/Pointer.svg'), default;
+$telegram: url('../../assets/Telegram.svg');
+$facebook: url('../../assets/Facebook.svg');
+$instagram: url('../../assets/Instagram.svg');
 
 .nav-bar {
   display: flex;
@@ -69,10 +69,10 @@ $instagram: url("../../assets/Instagram.svg");
           mask: $telegram;
         }
         &.icon-facebook {
-          mask: $facebook;
+          mask: $telegram;
         }
         &.icon-instagram {
-          mask: $instagram;
+          mask:$telegram;
         }
         &:hover {
           background: $mainAccent;
@@ -125,7 +125,7 @@ $instagram: url("../../assets/Instagram.svg");
       }
     }
     .nav-btn__bar {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       width: 25px;
@@ -134,7 +134,7 @@ $instagram: url("../../assets/Instagram.svg");
       background: #eeeeee;
       transition: all 300ms ease-in-out;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         display: block;
         width: 25px;
@@ -145,7 +145,7 @@ $instagram: url("../../assets/Instagram.svg");
         transition: all 300ms ease-in-out;
       }
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         display: block;
         width: 25px;
