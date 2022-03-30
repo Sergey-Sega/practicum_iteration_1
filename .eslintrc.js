@@ -1,7 +1,7 @@
 module.exports = {
     env: {
       browser: true,
-      es2020: true,
+      es6: true,
     },
     extends: ['plugin:react/recommended', 'google'],
     parserOptions: {
@@ -11,7 +11,8 @@ module.exports = {
       ecmaVersion: 11,
       sourceType: 'module',
     },
-    plugins: ['react'],
+    plugins: ['react',],
+    ignorePatterns: ["store.js"],
     rules: {
       'require-jsdoc': 'off',
       'linebreak-style': 'off',
