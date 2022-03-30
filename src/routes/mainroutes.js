@@ -8,10 +8,9 @@ import {OrderPage} from '../components/pages/OrderPage/OrderPage';
 export const Routes = () => {
     return (
         <Switch>
-            <Route exact path='/need-for-drive' component={MainPageContainer} />
-            <Route exact path="/need-for-drive/order-page" component={OrderPage}/>
-           <Route exact path="/need-for-drive/order-page/:orderId" component={FinalPage}/>
-           {/* <Redirect exact from="/need-for-drive/order-page/:orderId" to="/need-for-drive"/> */}
+            <Route exact path='/practicum_iteration_1' component={MainPageContainer} />
+            <Route exact path="/practicum_iteration_1/order-page" component={OrderPage}/>
+           <Route exact path="/practicum_iteration_1/order-page/:orderId" component={FinalPage}/>
         </Switch>
     );
 };

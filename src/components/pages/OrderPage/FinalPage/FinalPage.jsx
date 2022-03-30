@@ -90,7 +90,7 @@ return (
         type='button big-btn total-btn warn-btn red-btn'
         title='Отменить'
         action={() => {
-          history.push('/need-for-drive/order-page');
+          history.push('/practicum_iteration_1/order-page');
           store.navAction('s1');
           store.clearData();
 }}

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Header({classNames}) {
   return (
       <header className={'header ' + classNames}>
-        <Link className='header__site-name' to='/need-for-drive'>
+        <Link className='header__site-name' to='/practicum_iteration_1'>
           Need for drive
         </Link>
         <span className='header__geolocation'>

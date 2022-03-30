@@ -10,8 +10,6 @@ class Store
 
     order = {}
 
-    
-
     _initialData = {
         orderState:false,
 
@@ -139,16 +137,17 @@ async showCity()
         result.push(...data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()); 
      
     this.data.cityLocation = result
-    console.log(...data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse())
 }
    async writePoint(coordinates){
        
        const result = []
     const res = await fetch(`https://geocode-maps.yandex.ru/1.x/?apikey=${YMAPS_KEY}&format=json&geocode=${coordinates.reverse()}`)
     const data = await res.json();
-
+    
+    if (this.data.destination.length !== 0 && this.data.destination.every(() => data.response.GeoObjectCollection.featureMember[0].GeoObject.name))
+    return
     result.push(data.response.GeoObjectCollection.featureMember[0].GeoObject.name)
-        this.data.destination = result
+    this.data.destination = result
     }
 
     navAction(key)
@@ -278,11 +277,8 @@ async showCity()
 
     setOptions(value){
           
-      
        const index = this.data.options.findIndex((elem) => elem == value);
       
-    
-
    if (index != -1) {
     this.data.options.splice(index, 1);
            } else {

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Map, YMaps, Placemark } from 'react-yandex-maps';
 import { YMAPS_KEY } from '../../../../config';
@@ -19,13 +20,6 @@ export const CarMap = observer(({cityRef}) => {
 })();
   }, []);
 
-  const getPointData = (index) => {
-    return {
-      balloonContentBody: 'placemark <strong>balloon ' + index + '</strong>',
-      clusterCaption: 'placemark <strong>' + index + '</strong>',
-    };
-  };
-
 return (
    <YMaps
     query={{
@@ -45,7 +39,6 @@ return (
               onClick = {()=> store.writePoint(coordinates)}
                 key={idx}
                 geometry={coordinates}
-                properties={getPointData(idx)}
                 options={{
                   iconLayout: 'default#image',
                   iconImageSize: [18, 18],

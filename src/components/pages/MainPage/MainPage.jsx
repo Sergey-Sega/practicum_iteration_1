@@ -22,7 +22,7 @@ export const MainPageContainer = () => {
           <p className='main-page__content__info-block__text'>
             Поминутная аренда авто твоего города
           </p>
-          <Link to='/need-for-drive/order-page'>
+          <Link to='/practicum_iteration_1/order-page'>
           <Button type={'button fake-btn big-btn'} title='Забронировать' />
           </Link>
         </div>

@@ -23,7 +23,7 @@ export const Warning = observer(() => {
               store.action( 'orderState', true);
               store.action( 'modal', false);
               store.action( 's4', false);
-              push(`/need-for-drive/order-page/${store.data.orderId}`);
+              push(`/practicum_iteration_1/order-page/${store.data.orderId}`);
 }}
           ></Button>
           <Button
