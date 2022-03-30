@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/practicum_iteration_1/static/css/main.c0f7b2e3.css",
-    "main.js": "/practicum_iteration_1/static/js/main.8d7fc4c0.js",
+    "main.css": "/practicum_iteration_1/static/css/main.a73268df.css",
+    "main.js": "/practicum_iteration_1/static/js/main.7d2e52ee.js",
     "static/media/slide_4.jpg": "/practicum_iteration_1/static/media/slide_4.82fdbed03a732683747a.jpg",
     "static/media/slide_1.jpg": "/practicum_iteration_1/static/media/slide_1.024ae8f23c16f0e9f0fb.jpg",
     "static/media/slide_3.jpg": "/practicum_iteration_1/static/media/slide_3.d16c5160289ec3819226.jpg",
@@ -9,20 +9,17 @@
     "static/media/Roboto-Medium.ttf": "/practicum_iteration_1/static/media/Roboto-Medium.13a29228654d5c5ec9c4.ttf",
     "static/media/Roboto-Bold.ttf": "/practicum_iteration_1/static/media/Roboto-Bold.4f39c5796e60c9d8e732.ttf",
     "static/media/Roboto-Light.ttf": "/practicum_iteration_1/static/media/Roboto-Light.0cea39826bd36bbfe330.ttf",
-    "static/media/FakeMap.jpg": "/practicum_iteration_1/static/media/FakeMap.6b0f8981da6b25226828.jpg",
-    "static/media/car.png": "/practicum_iteration_1/static/media/car.436bdf3ec93413726b38.png",
-    "static/media/Instagram.svg": "/practicum_iteration_1/static/media/Instagram.f54535e2d0b887508e8e.svg",
+    "static/media/FakeImg.png": "/practicum_iteration_1/static/media/FakeImg.04674cc3f1bdfd052a6a.png",
     "static/media/Pointer.svg": "/practicum_iteration_1/static/media/Pointer.76c5f42321835101e15a.svg",
     "static/media/Telegram.svg": "/practicum_iteration_1/static/media/Telegram.a799852387ddd6bd8ccf.svg",
     "static/media/Geo.svg": "/practicum_iteration_1/static/media/Geo.f077510a47459d40a59f4daabc02af01.svg",
     "static/media/Cursor.svg": "/practicum_iteration_1/static/media/Cursor.fbb7bbd5c74a93aa485f.svg",
-    "static/media/Facebook.svg": "/practicum_iteration_1/static/media/Facebook.8a65a362404875370d2a.svg",
     "index.html": "/practicum_iteration_1/index.html",
-    "main.c0f7b2e3.css.map": "/practicum_iteration_1/static/css/main.c0f7b2e3.css.map",
-    "main.8d7fc4c0.js.map": "/practicum_iteration_1/static/js/main.8d7fc4c0.js.map"
+    "main.a73268df.css.map": "/practicum_iteration_1/static/css/main.a73268df.css.map",
+    "main.7d2e52ee.js.map": "/practicum_iteration_1/static/js/main.7d2e52ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0f7b2e3.css",
-    "static/js/main.8d7fc4c0.js"
+    "static/css/main.a73268df.css",
+    "static/js/main.7d2e52ee.js"
   ]
 }
